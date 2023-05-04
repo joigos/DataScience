@@ -1,4 +1,4 @@
-# Mineria de texto y el procesamiento de lenguaje natural (NLP)
+# Mineria de texto y procesamiento de lenguaje natural (NLP)
 
 <br>
 
