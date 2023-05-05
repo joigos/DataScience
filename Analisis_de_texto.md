@@ -168,7 +168,7 @@ from nltk.stem import SnowballStemmer
 
 <br>
 
-Los primero que se hace es importar la base de datos. Para este ejemplo se debe descargar la base de datos de Sentimientos_empresa.csv, la cual está guardada en este mismo repositorio. Esta base contiene comentarios de empleados sobre de su nivel de satisfacción con la empresa en la cual trabajan, los cuales, a su vez, se encuentran etiquetados como positivo, negativo o neutral (Paso 1).
+Los primero que se hace es importar la base de datos. Para este ejemplo se debe descargar la base de datos de Sentimientos_empresa.csv, la cual está guardada en este mismo repositorio. Esta base contiene comentarios de empleados sobre de su nivel de satisfacción con la empresa en la cual trabajan, los cuales, a su vez, se encuentran etiquetados como positivo, negativo o neutral (Paso 1). Es importante cambiar la URL con la ruta en donde el lector haya guardado la base de datos.
 
 ```python
 data = pd.read_csv('C:/Users/PC/Documents/Sentimientos_empresa.csv',
