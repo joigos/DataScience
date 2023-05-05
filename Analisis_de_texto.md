@@ -107,7 +107,7 @@ Existen diferentes métodos de representación de texto que se utilizan en el pr
     
     *Supongamos que tenemos la palabra "comenzó" que no se encuentra en el vocabulario de la bolsa de palabras. Si utilizamos un modelo de representación basado en subpalabras, la palabra "comenzó" podría descomponerse en los siguientes subpares: {"co", "com", "ome", "men", "enz", "nzó"} y estos subpares se utilizarían para generar una representación de la palabra.*
 
-Dependiendo del problema en cuestión se escoge la ténica más adecuada a criterio experto del investigador o a la necesidad misma del problema. 
+Dependiendo del problema en cuestión se escoge la ténica más adecuada a criterio experto del investigador o a la necesidad misma del problema.
 
 <br>
 
