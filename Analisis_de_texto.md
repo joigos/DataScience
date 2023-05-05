@@ -6,11 +6,11 @@
 
 La minería de texto y el procesamiento de lenguaje natural son dos campos relacionados que se enfocan en extraer y analizar información a partir de texto escrito o hablado. Estos campos se han vuelto cada vez más importantes debido a la enorme cantidad de datos no estructurados que se generan a diario, y a la necesidad de obtener información útil a partir de ellos.
 
-Por un lado, la mineria de texto se enfoca en detectar __tendencias, patrones o relaciones__ en los textos. Para esto se apoya de técnicas estadísticas y de Machine Learning. A raíz de ella han surgido un gran número de métodos como el análisis de sentimientos o la clasificación de documentos que permiten la obtención de insights o señales en datos tan complejos como lo pueden ser los conjuntos de texto.
+Por un lado, la mineria de texto se enfoca en detectar __tendencias, patrones o relaciones__ en los textos. Para esto se apoya de técnicas estadísticas y de Machine Learning. A raíz de ella han surgido un gran número de métodos como la clasificación de documentos o la extracción de información que permiten la obtención de insights o señales en datos tan complejos como los grandes conjuntos de texto.
 
-En contra parte, el procesamiento de lenguaje natural se centra en el __entendimiento y comprensión__ del lenguaje humano. Al igual que la minería de texto, este emplea tecnicas tanto estadísticas como de machine learning. Mediante este se puede conseguir tareas como la traducción automática el análisis estructural del texto, la generación de lenguaje natural y humano y la respuesta automatica de preguntas por medio de, por ejemplo, chatbots.
+En contra parte, el procesamiento de lenguaje natural se centra en el __entendimiento y comprensión__ del lenguaje humano. Al igual que la minería de texto, este emplea tecnicas tanto estadísticas como de Machine Learning. Mediante este se puede realizar tareas como la traducción automática el análisis estructural del texto, la generación de lenguaje natural y humano y la respuesta automatica de preguntas por medio de, por ejemplo, chatbots.
 
-Gracias a estas dos poderosas herramientas se han generado avances significativos en el análisis y la comprension de grandes conjuntos de texto y datos no estructurados, las cuales estan siendo empleados por diferentes campos del saber como la academia, la industria, la inteligencia artificial o el marketing. 
+Gracias a estas dos herramientas se han generado avances significativos en el análisis y la comprension de grandes conjuntos de texto y datos no estructurados, los cuales estan siendo empleados por diferentes campos del saber como  la industria, la inteligencia artificial o el marketing. 
 
 <br>
 
@@ -28,7 +28,7 @@ Gracias a estas dos poderosas herramientas se han generado avances significativo
 
 ## Procesamiento de texto: preprocesamiento y normalización de datos de texto
 
-El preprocesamiento y la normalización de datos de texto son técnicas importantes en el procesamiento del lenguaje natural. El objetivo de estas técnicas es transformar los datos de texto en una forma más procesable y significativa para los modelos de aprendizaje automático o para la aplicación de técnicas de minería de texto. A continuación te explico cada técnica:
+El preprocesamiento y la normalización de datos de texto son técnicas importantes en el procesamiento del lenguaje natural. El objetivo de estas técnicas es transformar los datos de texto en una forma más procesable y significativa para los modelos de aprendizaje automático o para la aplicación de técnicas de minería de texto. Cada una de estas técnicas se explian a continuación:
 
 
 
@@ -107,14 +107,14 @@ Existen diferentes métodos de representación de texto que se utilizan en el pr
     
     *Supongamos que tenemos la palabra "comenzó" que no se encuentra en el vocabulario de la bolsa de palabras. Si utilizamos un modelo de representación basado en subpalabras, la palabra "comenzó" podría descomponerse en los siguientes subpares: {"co", "com", "ome", "men", "enz", "nzó"} y estos subpares se utilizarían para generar una representación de la palabra.*
 
-Cada uno de estos métodos tiene sus ventajas y desventajas y se utilizan en diferentes aplicaciones de procesamiento de lenguaje natural. La elección del método dependerá del problema específico a resolver y del tipo de datos de texto que se esté analizando.
+Dependiendo del problema en cuestión se escoge la ténica más adecuada a criterio experto del investigador o a la necesidad misma del problema. 
 
 <br>
 
 ## Análisis de sentimientos
 
 <!--- IMAGEN -->
-![Imagen](https://www.meaningcloud.com/wp-content/uploads/2015/02/176964464-reduced.jpg "Análisis de sentimientos")
+![Imagen](https://s14418.pcdn.co/es/wp-content/uploads/2015/02/sentiment-analysis.jpg "Análisis de sentimientos")
 
 
 El análisis de sentimientos es una técnica novedosa de procesamiento de lenguaje natural que permite distinguir la actitud y la emoción expresada en un texto. La finalidad del análisis de sentimientos es clasificar el texto en diversas categorías como positivo, negativo o neutral, dependiendo de la manifestación de los sentimientos en el texto.
@@ -123,15 +123,15 @@ Para llevar a cabo el análisis de sentimientos, se emplean algoritmos de aprend
 
 Los datos etiquetados pueden ser revisados manualmente por humanos o etiquetados automáticamente por medio de técnicas de análisis de texto y minería de datos. Una vez que el modelo está entrenado, se puede utilizar para clasificar nuevos textos en las categorías de sentimiento que les corresponde.
 
-El análisis de sentimientos se aplica en una gran cantidad de aplicaciones, tales como la monitorización de la reputación en línea de una marca o empresa, la evaluación de la satisfacción del cliente, la identificación de tendencias en las opiniones de los usuarios y la detección de noticias falsas o propaganda.
+El análisis de sentimientos se usa en una gran cantidad de aplicaciones tales como la monitorización de la reputación en línea de una marca o empresa, la evaluación de la satisfacción del cliente, la identificación de tendencias en las opiniones de los usuarios y la detección de noticias falsas o propaganda.
 
 <br>
 
 *Ejemplo:*
 
-En el análisis de sentimientos, se puede ejemplificar el proceso de clasificación de comentarios de clientes de un hotel según su tono emocional. Para ello, se hace uso de un modelo de aprendizaje automático que ha sido previamente entrenado con un conjunto de datos etiquetados de comentarios de clientes, donde cada comentario se asocia a una categoría específica, como "excelente", "malo" o "neutral". De esta forma, al recibir un nuevo comentario como "Mi estancia en el hotel fue maravillosa, el personal fue extremadamente amable y servicial", el modelo lo clasificaría como un comentario positivo y lo ubicaría en su respectiva categoría.
+En el análisis de sentimientos, se puede ejemplificar el proceso de clasificación de comentarios de empleados de una empresa según su tono emocional. Para ello, se hace uso de un modelo de aprendizaje automático que ha sido previamente entrenado con un conjunto de datos etiquetados de comentarios de empleados, donde cada comentario se asocia a una categoría específica, como "positivo", "negativo" o "neutral". De esta forma, al recibir un nuevo comentario como "Me gusta trabajar en esta empresa porque el ambiente es agradable y el equipo es amigable y colaborativo.", el modelo lo clasificaría como un comentario positivo y lo ubicaría en su respectiva categoría.
 
-Una vez que se completa el entrenamiento del modelo, se habilita la clasificación de nuevos comentarios de los clientes en las categorías apropiadas. Por ejemplo, si un nuevo comentario indica "Mi estancia en el hotel fue excepcional, el personal fue extremadamente amable y servicial", el modelo lo categorizaría como un comentario positivo.
+Una vez que se completa el entrenamiento del modelo, se habilita la clasificación de nuevos comentarios de los clientes en las categorías apropiadas. Por ejemplo, si un nuevo comentario indica "La empresa me ofrece un salario justo y beneficios atractivos, lo que me ha permitido tener una buena calidad de vida.", el modelo lo categorizaría como un comentario positivo.
 
 <br>
 
