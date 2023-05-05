@@ -216,7 +216,7 @@ X_tfidf = tfidf_transformer.fit_transform(X_count)
 
 <br>
 
-Como se va a entrenar un modelo de aprendizaje supervisado, los datos deben dividirse en dos, una para entrenar el modelo y otro para probarlo con datos que el modelo no conozca. Se entrena el modelo empleando algún algorítmo de machine learning que se adecue, en este caso se emplea el algoritmo de gradiente descendiente estocástico (Paso 4 y 5).
+Como se va a entrenar un modelo de aprendizaje supervisado, los datos deben dividirse en dos partes, uno para entrenar el modelo y otro para probarlo. Se entrena el modelo empleando algún algorítmo de Machine Learning que se adecue, en este caso se emplea el algoritmo de gradiente descendiente estocástico (Paso 4 y 5).
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X_tfidf, 
@@ -238,7 +238,7 @@ clf.fit(X_train, y_train)
 
 <br>
 
-Con los datos de prueba se evalua el rendimiento del modelo. Para este ejemplo se emplea la metrica de accuracy el cual mide las predicion correctas en relación al total de predicciones realizadas, esto es, el número porcentaje de comentarios clasificados correctamente como positivo, negativo o neutral (Paso 6).
+Con los datos de prueba se evalua el rendimiento del modelo. Para este ejemplo se emplea la métrica de accuracy, el cual mide las predicciones correctas en relación al total de predicciones realizadas, esto es, el porcentaje de comentarios clasificados correctamente como positivo, negativo o neutral (Paso 6).
 
 ```python
 y_pred = clf.predict(X_test)
@@ -249,7 +249,7 @@ print("Exactitud:", accuracy)
 
 <br>
 
-Por último, se pone en funcionamiento el modelo entrenado para clasificar nuevos datos de texto en las categorías de sentimiento correspondientes, como positivo, negativo o neutral. Hay que aclarar que la base de datos empleada tiene muy pocos registros, por lo que la precisión puede no ser la mejor. Lo ideal para este tipo de modelos es entrenarlos con miles de registros distintos para que el modelo etiquete de mejor forma nuevos comentarios (Paso 7). 
+Por último, se pone en funcionamiento el modelo para clasificar nuevos datos de texto en las categorías de sentimiento correspondientes, como positivo, negativo o neutral. Hay que aclarar que la base de datos empleada tiene muy pocos registros, por lo que la precisión puede no ser la mejor. Lo ideal para este tipo de modelos es entrenarlos con miles de registros distintos para que el modelo etiquete de mejor forma nuevos comentarios (Paso 7). 
 
 ```python
 # Oración de prueba
