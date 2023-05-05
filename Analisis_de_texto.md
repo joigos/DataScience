@@ -54,7 +54,7 @@ La normalización de datos de texto consiste en la transformación del texto en 
 
     * Corrección ortográfica. implica corregir los errores ortográficos, de tal forma que no hayan diferentes palabras producto de una mala digitación u ortografía, por ejemplo, que no hayan palabras como "saltando" "zaltando" o "saltonda", devolviendolas todas a su forma correcta "saltando" y mejorando la precisíon y, por lo tanto, la confiabilidad del análisis.
 
-    *Eliminación de acentos: implica eliminar todas las tildes de las palabras, evitando tambien un sinumero de palabras similares.
+    *   Eliminación de acentos: implica eliminar todas las tildes de las palabras, evitando tambien un sinumero de palabras similares.
     
 Por lo tanto, el preprocesamiento y la normalización de texto son el primer paso en la transformación de texto a una forma más comprensible y relevante para la posterior ejecución de modelos de Machine learning y para diversas técnicas estadísticas sobre ellos, mejorando así la calidad y la precisión del análisis.
 
@@ -168,12 +168,14 @@ from nltk.stem import SnowballStemmer
 
 <br>
 
-Paso 1: Se importa la base de datos.
+Los primero que se hace es importar la base de datos. Para este ejemplo se debe descargar la base de datos de Sentimientos_empresa.csv, la cual está guardada en este mismo repositorio. Esta base contiene comentarios de empleados sobre de su nivel de satisfacción con la empresa en la cual trabajan, los cuales, a su vez, se encuentran etiquetados como positivo, negativo o neutral (Paso 1).
 
 ```python
-data = pd.read_csv('E:/Jorge Gómez/Economía/Cursos/Analista de datos/Python/Practica y enseñanza/Sentimientos_empresa.csv',
+data = pd.read_csv('C:/Users/PC/Documents/Sentimientos_empresa.csv',
                    sep=";",
                    encoding='latin-1')
+
+                   
 
 X = data["comentario"]
 y = data["sentimiento"]
@@ -183,7 +185,7 @@ data["comentario"]
 
 <br>
 
-Paso 2: Se realiza el preprocesamiento y normalización de los datos de texto.
+A continuacion, se debe realizar el preprocesamiento y la normalización del texto, en este caso se realiza el stemming, la corrección ortográfica, la eliminación de acentos, la tokenización, y la eliminación de palabras vacias(stopwords), este último usando stopwords en español (Paso 2).
 
 ```python
 stemmer = SnowballStemmer('spanish')
@@ -198,7 +200,7 @@ X = X.apply(preprocess)
 
 <br>
 
-Paso 3: Crear una representación de los datos de texto utilizando la técnica de bolsa de palabras.
+Una vez normalizado el texto, este ya es más procesable y significativo para el análisis. Sin embargo, se debe transformar el texto a forma numérica de tal forma que pueda emplearse en un modelo de aprendizaje automático. Para esto se realiza algún método de representación de texto. En este caso se realiza la técnica de bolsa de palabras (Paso 3). 
 
 ```python
 # Cuenta la frecuencia de las palabras
@@ -214,23 +216,21 @@ X_tfidf = tfidf_transformer.fit_transform(X_count)
 
 <br>
 
-Paso 4: Dividir los datos en conjuntos de entrenamiento y prueba.
+Como se va a entrenar un modelo de aprendizaje supervisado, los datos deben dividirse en dos, una para entrenar el modelo y otro para probarlo con datos que el modelo no conozca. Se entrena el modelo empleando algún algorítmo de machine learning que se adecue, en este caso se emplea el algoritmo de gradiente descendiente estocástico (Paso 4 y 5).
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X_tfidf, 
                                                     y, 
                                                     test_size=0.2, 
-                                                    random_state=42)
+                                                    random_state=123)
 ```
 
 <br>
 
-Paso 5: Entrenar un modelo de aprendizaje automático
-
 ```python
 # Se entrena utilizando el algoritmo gradiente descendiente estocástico
 clf = SGDClassifier(loss='log', 
-                    random_state=42, 
+                    random_state=123, 
                     max_iter=1000)
 
 clf.fit(X_train, y_train)
@@ -238,7 +238,7 @@ clf.fit(X_train, y_train)
 
 <br>
 
-Paso 6: Evaluar el rendimiento del modelo utilizando el conjunto de prueba
+Con los datos de prueba se evalua el rendimiento del modelo. Para este ejemplo se emplea la metrica de accuracy el cual mide las predicion correctas en relación al total de predicciones realizadas, esto es, el número porcentaje de comentarios clasificados correctamente como positivo, negativo o neutral (Paso 6).
 
 ```python
 y_pred = clf.predict(X_test)
@@ -249,11 +249,11 @@ print("Exactitud:", accuracy)
 
 <br>
 
-Paso 7: Utilizar el modelo entrenado para clasificar nuevos datos de texto en las categorías de sentimiento correspondientes, como positivo, negativo o neutral.
+Por último, se pone en funcionamiento el modelo entrenado para clasificar nuevos datos de texto en las categorías de sentimiento correspondientes, como positivo, negativo o neutral. Hay que aclarar que la base de datos empleada tiene muy pocos registros, por lo que la precisión puede no ser la mejor. Lo ideal para este tipo de modelos es entrenarlos con miles de registros distintos para que el modelo etiquete de mejor forma nuevos comentarios (Paso 7). 
 
 ```python
 # Oración de prueba
-sentence = "No estoy contento con mi trabajo actual porque siento que no estoy utilizando todo mi potencial y no veo oportunidades de crecimiento en mi posición actual."
+sentence = "No estoy contento con mi trabajo actual, me siento triste y frustrado en estos momentos."
 
 # Preprocesando la oración
 preprocessed_sentence = preprocess(sentence)
